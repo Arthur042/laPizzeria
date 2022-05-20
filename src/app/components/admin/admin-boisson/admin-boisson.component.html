@@ -1,0 +1,33 @@
+<div class="container">
+    <ul class="nav nav-tabs mt-5">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/Pizza']">pizza</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" [routerLink]="['/admin/Boisson']">Boisson</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/Dessert']">Déssert</a>
+      </li>
+    </ul>
+      <table class="table mt-4">
+          <thead>
+            <tr>
+              <th scope="col">Nom de la boisson</th>
+              <th scope="col">Prix</th>
+              <th scope="col">Quantité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let boisson of boissons">
+              <th scope="row">{{ boisson.name }}</th>
+              <td>{{ boisson.price }} €</td>
+              <td>{{ boisson.quantity }}</td>
+              <td><fa-icon [icon]="faTrash" class="trash py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+              <td><fa-icon [icon]="faEdit" class="update py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+            </tr>
+          </tbody>
+      </table>
+  
+      <a id="tablebtn" class="btn btn-primary mt-3 text-light" [routerLink]="['/admin/Boisson/Ajout']" role="button">Ajouter une boisson à la liste</a>
+  </div>

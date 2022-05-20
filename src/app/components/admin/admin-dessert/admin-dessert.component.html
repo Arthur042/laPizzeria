@@ -1,0 +1,39 @@
+<div class="container">
+    <ul class="nav nav-tabs mt-5">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/Pizza']">pizza</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/admin/Boisson']">Boisson</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" [routerLink]="['/admin/Dessert']">Déssert</a>
+      </li>
+    </ul>
+      <table class="table mt-4">
+          <thead>
+            <tr>
+              <th scope="col">Nom du déssert</th>
+              <th scope="col">Prix</th>
+              <th scope="col">Quantité</th>
+              <th scope="col">Liste des ingrédients</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let dessert of desserts">
+              <th scope="row">{{ dessert.name }}</th>
+              <td>{{ dessert.price }} €</td>
+              <td>{{ dessert.quantity }}</td>
+              <td>
+                <ul>
+                  <li *ngFor="let ingredient of dessert.ingredient">{{ ingredient }}</li>
+                </ul>
+              </td>
+              <td><fa-icon [icon]="faTrash" class="trash py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+              <td><fa-icon [icon]="faEdit" class="update py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+            </tr>
+          </tbody>
+      </table>
+  
+      <a id="tablebtn" class="btn btn-primary mt-3 text-light mb-5" [routerLink]="['/admin/Dessert/Ajout']" role="button">Ajouter un déssert à la liste</a>
+  </div>

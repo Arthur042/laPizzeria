@@ -1,0 +1,18 @@
+<div id="display">
+    <!-- Default form login -->
+    <form #logValid="ngForm" class="text-center border border-light p-5" (submit)="checkValidity()">
+        <p class="h4 mb-4">Connexion</p>
+        <!-- Email -->
+        <div class="form-group">
+            <label for="mail">adresse e-mail</label>
+            <input required type="email" id="mail" name="mail" class="form-control mb-4" placeholder="E-mail" [(ngModel)]="logIn.mail" #mail="ngModel">
+        </div>
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Mot de passe</label>
+            <input required type="password" id="password" name="password" class="form-control mb-4" placeholder="Mot de passe" [(ngModel)]="logIn.password" #password="ngModel">
+        </div>
+        <!-- Sign in button -->
+        <button [disabled]="!logValid.valid" mdbBtn color="info" block="true" class="my-4 btn btn-primary text-light mb-5" type="submit">Connexion</button>
+    </form>
+</div>

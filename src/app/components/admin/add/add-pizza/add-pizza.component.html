@@ -1,0 +1,37 @@
+<div id="display">
+    <!-- Default form login -->
+    <form #pizzaValid="ngForm" class="text-center border border-light p-5" (submit)="add()">
+        <p class="h4 mb-4">Connexion</p>
+        <!-- Nom de la pizza -->
+        <div class="form-group">
+            <label for="name">Nom de la pizza</label>
+            <input required type="text" id="name" name="name" class="form-control mb-4" [(ngModel)]="newPizza.name" #name="ngModel">
+        </div>
+        <!-- image de la pizza -->
+        <div class="form-group">
+            <label for="image">inssérer image</label>
+            <input required type="text" id="image" name="image" class="form-control mb-4" [(ngModel)]="newPizza.image" #image="ngModel">
+        </div>
+        <!-- prix de la pizza -->
+        <div class="form-group">
+            <label for="price">Prix de la pizza</label>
+            <input required type="number" id="price" name="price" class="form-control mb-4" [(ngModel)]="newPizza.price" #price="ngModel">
+        </div>
+        <!-- base de la pizza -->
+        <select required id="base" name="base" class="form-select" aria-label="PizzaBase" #base="ngModel" [(ngModel)]="newPizza.base">
+            <option selected [ngValue]="undefined">Choisis une base pour la pizza</option>
+            <option *ngFor="let base of bases" [ngValue]="base">{{ base }}</option>
+        </select>
+
+        <!-- ingrédient de la pizza -->
+        <div class="form-group">
+
+              <label class="checkbox-inline m-1" for="ingredient" *ngFor="let ingredient of ingredients">
+                 <input class="form-check-input m-1" type="checkbox" id="{{ingredient}}" name="ingredient" [value]="ingredient" (change)="onCheckChange($event, ingredient)">{{ ingredient }}
+              </label>
+
+          </div>
+        <!-- Add button -->
+        <button [disabled]="!pizzaValid.valid" mdbBtn color="info" block="true" class="my-4 btn btn-primary text-light mb-5" type="submit">Ajouter</button>
+    </form>
+</div>

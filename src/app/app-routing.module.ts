@@ -1,7 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddBoissonComponent } from './components/admin/add/add-boisson/add-boisson.component';
+import { AddDessertComponent } from './components/admin/add/add-dessert/add-dessert.component';
+import { AddPizzaComponent } from './components/admin/add/add-pizza/add-pizza.component';
+import { AdminBoissonComponent } from './components/admin/admin-boisson/admin-boisson.component';
+import { AdminDessertComponent } from './components/admin/admin-dessert/admin-dessert.component';
+import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
+import { LoginPageComponent } from './components/admin/login-page/login-page.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', component: HomepageComponent},
+  {path: 'login', component: LoginPageComponent},
+  {path: 'admin/Pizza', component: AdminHomeComponent},
+  {path: 'admin/Boisson', component: AdminBoissonComponent},
+  {path: 'admin/Dessert', component: AdminDessertComponent},
+  {path: 'admin/Pizza/Ajout', component: AddPizzaComponent},
+  {path: 'admin/Boisson/Ajout', component: AddBoissonComponent},
+  {path: 'admin/Dessert/Ajout', component: AddDessertComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
