@@ -18,12 +18,13 @@ export class AdminHomeComponent implements OnInit {
   ngOnInit(): void {
     this.PizzaService.getAllPizza().subscribe(data => {
       this.pizzas = data;
-
-      // this.pizzas[0].ingredient?.forEach(Element => {
-      //   console.log(Element)
-      // });
-      
     })
+  }
+
+  deletePizza(id?: number) {
+ this.PizzaService.deletePizza(id).subscribe(data => {
+   this.pizzas = this.pizzas.filter(pizza => pizza.id != id);
+ })
   }
 
 }

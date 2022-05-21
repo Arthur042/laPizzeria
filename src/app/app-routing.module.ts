@@ -7,6 +7,9 @@ import { AdminBoissonComponent } from './components/admin/admin-boisson/admin-bo
 import { AdminDessertComponent } from './components/admin/admin-dessert/admin-dessert.component';
 import { AdminHomeComponent } from './components/admin/admin-home/admin-home.component';
 import { LoginPageComponent } from './components/admin/login-page/login-page.component';
+import { UpdateBoissonComponent } from './components/admin/update/update-boisson/update-boisson.component';
+import { UpdateDessertComponent } from './components/admin/update/update-dessert/update-dessert.component';
+import { UpdatePizzaComponent } from './components/admin/update/update-pizza/update-pizza.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
 const routes: Routes = [
@@ -17,7 +20,10 @@ const routes: Routes = [
   {path: 'admin/Dessert', component: AdminDessertComponent},
   {path: 'admin/Pizza/Ajout', component: AddPizzaComponent},
   {path: 'admin/Boisson/Ajout', component: AddBoissonComponent},
-  {path: 'admin/Dessert/Ajout', component: AddDessertComponent}
+  {path: 'admin/Dessert/Ajout', component: AddDessertComponent},
+  {path: 'admin/Pizza/Update/:id', component: UpdatePizzaComponent},
+  {path: 'admin/Dessert/Update/:id', component: UpdateDessertComponent},
+  {path: 'admin/Boisson/Update/:id', component: UpdateBoissonComponent}
 ];
 
 @NgModule({

@@ -20,4 +20,9 @@ export class AdminDessertComponent implements OnInit {
     })
   }
 
+  deleteDessert(id?: number) {
+    this.DessertService.deleteDessert(id).subscribe(data => {
+      this.desserts = this.desserts.filter(dessert => dessert.id != id);
+    })
+  }
 }

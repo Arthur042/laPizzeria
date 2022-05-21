@@ -15,4 +15,21 @@ export class DessertService {
   getAllDessert() :Observable<Dessert[]>{
     return this.HttpClient.get<Dessert[]>(this.apiUrl);
   } 
+
+  addDessert(dessert: Dessert) :Observable<Dessert>{
+    return this.HttpClient.post<Dessert>(this.apiUrl, dessert);
+  }
+
+  deleteDessert(id ?: number): Observable<Dessert>{
+    return this.HttpClient.delete<Dessert>(this.apiUrl + '/' + id);
+  }
+
+  GetWithId(id ?: number): Observable<Dessert>{
+    return this.HttpClient.get<Dessert>(this.apiUrl + '/' + id);
+  }
+
+  updateDessert(dessert: Dessert): Observable<Dessert>{
+    return this.HttpClient.put<Dessert>(this.apiUrl + '/' + dessert.id, dessert)
+  }
 }
+

@@ -1,26 +1,26 @@
 <div id="display">
     <!-- Default form login -->
-    <form #pizzaValid="ngForm" class="border border-light p-5" (submit)="add()">
-        <p class="h4 mb-4">Ajouter une pizza au menu</p>
+    <form class="border border-light p-5" (submit)="update()">
+        <p class="h4 mb-4">Modifier une pizza</p>
         <!-- Nom de la pizza -->
         <div id="formDisplay">
             <div class="form-group">
                 <label for="name">Nom de la pizza</label>
-                <input required type="text" id="name" name="name" class="form-control mb-4" [(ngModel)]="newPizza.name" #name="ngModel">
+                <input type="text" id="name" name="name" class="form-control mb-4" [(ngModel)]="newPizza.name" >
             </div>
             <!-- image de la pizza -->
             <div class="form-group">
                 <label for="image">insérer image</label>
-                <input required type="text" id="image" name="image" class="form-control mb-4" [(ngModel)]="newPizza.image" #image="ngModel">
+                <input type="text" id="image" name="image" class="form-control mb-4" [(ngModel)]="newPizza.image" >
             </div>
             <!-- prix de la pizza -->
             <div class="form-group">
                 <label for="price">Prix de la pizza</label>
-                <input required type="number" id="price" name="price" class="form-control mb-4" [(ngModel)]="newPizza.price" #price="ngModel">
+                <input type="number" id="price" name="price" class="form-control mb-4" [(ngModel)]="newPizza.price">
             </div>
         </div>
         <!-- base de la pizza -->
-        <select required id="base" name="base" class="form-select" aria-label="PizzaBase" #base="ngModel" [(ngModel)]="newPizza.base">
+        <select id="base" name="base" class="form-select" aria-label="PizzaBase" [(ngModel)]="newPizza.base">
             <option selected [ngValue]="undefined">Choisis une base pour la pizza</option>
             <option *ngFor="let base of bases" [ngValue]="base">{{ base }}</option>
         </select>
@@ -41,6 +41,6 @@
               </label>
         </div>
         <!-- Add button -->
-        <button [disabled]="!pizzaValid.valid" mdbBtn color="info" block="true" class="my-4 btn btn-primary text-light mb-5" type="submit">Ajouter</button>
+        <button mdbBtn color="info" block="true" class="my-4 btn btn-primary text-light mb-5" type="submit">Modifier</button>
     </form>
 </div>

@@ -15,4 +15,20 @@ export class BoissonService {
   getAllBoisson() :Observable<Boisson[]>{
     return this.HttpClient.get<Boisson[]>(this.apiUrl);
   } 
+
+  addBoisson(boisson: Boisson) :Observable<Boisson>{
+    return this.HttpClient.post<Boisson>(this.apiUrl, boisson);
+  }
+
+  deleteBoisson(id ?: number): Observable<Boisson>{
+    return this.HttpClient.delete<Boisson>(this.apiUrl + '/' + id);
+  }
+
+  GetWithId(id ?: number): Observable<Boisson>{
+    return this.HttpClient.get<Boisson>(this.apiUrl + '/' + id);
+  }
+
+  updateBoisson(boisson: Boisson): Observable<Boisson>{
+    return this.HttpClient.put<Boisson>(this.apiUrl + '/' + boisson.id, boisson)
+  }
 }

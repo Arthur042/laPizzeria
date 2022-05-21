@@ -20,4 +20,16 @@ export class PizzaService {
   addPizza(pizza: Pizza) :Observable<Pizza>{
     return this.HttpClient.post<Pizza>(this.apiUrl, pizza);
   }
+
+  deletePizza(id ?: number): Observable<Pizza>{
+    return this.HttpClient.delete<Pizza>(this.apiUrl + '/' + id);
+  }
+
+  GetWithId(id ?: number): Observable<Pizza>{
+    return this.HttpClient.get<Pizza>(this.apiUrl + '/' + id);
+  }
+
+  updatePizza(pizza: Pizza): Observable<Pizza>{
+    return this.HttpClient.put<Pizza>(this.apiUrl + '/' + pizza.id, pizza)
+  }
 }

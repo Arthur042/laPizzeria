@@ -1,0 +1,32 @@
+form{
+    width: 650px;
+    margin: auto;
+}
+
+.formDisplay{
+    display: flex;
+    justify-content: space-between;
+}
+.formDisplay input{
+    width: 250px;
+}
+
+.formDisplay .form-group{
+    margin-right: 1rem;
+}
+.formDisplay .form-group:last-child{
+    margin-right: 0;
+}
+
+#formIngredient input{
+    width: 380px;
+    margin-right: 1rem;
+}
+#formIngredient button{
+    height: 38px;
+}
+
+#formIngredient{
+    display: flex;
+    align-items: center
+}

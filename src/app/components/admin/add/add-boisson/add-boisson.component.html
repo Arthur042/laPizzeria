@@ -1,1 +1,33 @@
-<p>add-boisson works!</p>
+<div id="display">
+    <!-- Default form login -->
+    <form #pizzaValid="ngForm" class="border border-light p-5" (submit)="add()">
+        <p class="h4 mb-4">Ajouter une boisson au menu</p>
+        <!-- Nom du dessert -->
+        <div class="formDisplay">
+            <div class="form-group">
+                <label for="name">Nom de la boisson</label>
+                <input required type="text" id="name" name="name" class="form-control mb-4" [(ngModel)]="newBoisson.name" #name="ngModel">
+            </div>
+            <!-- image du dessert -->
+            <div class="form-group">
+                <label for="image">insérer image</label>
+                <input required type="text" id="image" name="image" class="form-control mb-4" [(ngModel)]="newBoisson.image" #image="ngModel">
+            </div>
+        </div>
+        
+        <div class="formDisplay">
+            <!-- prix du dessert -->
+            <div class="form-group">
+                <label for="price">Prix de la boisson</label>
+                <input required type="number" id="price" name="price" class="form-control mb-4" [(ngModel)]="newBoisson.price" #price="ngModel">
+            </div>
+            <!-- quantité du dessert -->
+            <div class="form-group">
+                <label for="quantity">Quantité</label>
+                <input required type="number" id="quantity" name="quantity" class="form-control mb-4" [(ngModel)]="newBoisson.quantity" #quantity="ngModel">
+            </div>
+        </div>
+        <!-- Add button -->
+        <button [disabled]="!pizzaValid.valid" mdbBtn color="info" block="true" class="my-4 btn btn-primary text-light mb-5" type="submit">Ajouter</button>
+    </form>
+</div>

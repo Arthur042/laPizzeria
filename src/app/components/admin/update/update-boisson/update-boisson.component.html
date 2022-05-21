@@ -1,0 +1,33 @@
+<div id="display">
+    <!-- Default form login -->
+    <form  class="border border-light p-5" (submit)="update()">
+        <p class="h4 mb-4">Modifier une boisson</p>
+        <!-- Nom du dessert -->
+        <div class="formDisplay">
+            <div class="form-group">
+                <label for="name">Nom de la boisson</label>
+                <input type="text" id="name" name="name" class="form-control mb-4" [(ngModel)]="newBoisson.name">
+            </div>
+            <!-- image du dessert -->
+            <div class="form-group">
+                <label for="image">insérer image</label>
+                <input type="text" id="image" name="image" class="form-control mb-4" [(ngModel)]="newBoisson.image">
+            </div>
+        </div>
+        
+        <div class="formDisplay">
+            <!-- prix du dessert -->
+            <div class="form-group">
+                <label for="price">Prix de la boisson</label>
+                <input type="number" id="price" name="price" class="form-control mb-4" [(ngModel)]="newBoisson.price">
+            </div>
+            <!-- quantité du dessert -->
+            <div class="form-group">
+                <label for="quantity">Quantité</label>
+                <input type="number" id="quantity" name="quantity" class="form-control mb-4" [(ngModel)]="newBoisson.quantity">
+            </div>
+        </div>
+        <!-- Add button -->
+        <button mdbBtn color="info" block="true" class="my-4 btn btn-primary text-light mb-5" type="submit">Modifier</button>
+    </form>
+</div>

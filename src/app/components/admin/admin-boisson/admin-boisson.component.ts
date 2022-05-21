@@ -20,4 +20,9 @@ export class AdminBoissonComponent implements OnInit {
     })
   }
 
+  deleteBoisson(id?: number) {
+    this.BoissonService.deleteBoisson(id).subscribe(data => {
+      this.boissons = this.boissons.filter(boisson => boisson.id != id);
+    })
+  }
 }

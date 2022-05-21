@@ -23,8 +23,8 @@
               <th scope="row">{{ boisson.name }}</th>
               <td>{{ boisson.price }} €</td>
               <td>{{ boisson.quantity }}</td>
-              <td><fa-icon [icon]="faTrash" class="trash py-3 px-0 px-lg-3 rounded"></fa-icon></td>
-              <td><fa-icon [icon]="faEdit" class="update py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+              <td><fa-icon (click)="deleteBoisson(boisson.id)" [icon]="faTrash" class="trash py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+              <td><fa-icon [routerLink]="['/admin/Boisson/Update', boisson.id]" [icon]="faEdit" class="update py-3 px-0 px-lg-3 rounded"></fa-icon></td>
             </tr>
           </tbody>
       </table>

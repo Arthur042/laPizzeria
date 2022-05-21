@@ -29,8 +29,8 @@
                   <li *ngFor="let ingredient of dessert.ingredient">{{ ingredient }}</li>
                 </ul>
               </td>
-              <td><fa-icon [icon]="faTrash" class="trash py-3 px-0 px-lg-3 rounded"></fa-icon></td>
-              <td><fa-icon [icon]="faEdit" class="update py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+              <td><fa-icon (click)="deleteDessert(dessert.id)" [icon]="faTrash" class="trash py-3 px-0 px-lg-3 rounded"></fa-icon></td>
+              <td><fa-icon [routerLink]="['/admin/Dessert/Update', dessert.id]" [icon]="faEdit" class="update py-3 px-0 px-lg-3 rounded"></fa-icon></td>
             </tr>
           </tbody>
       </table>

@@ -18,6 +18,9 @@ import { AdminDessertComponent } from './components/admin/admin-dessert/admin-de
 import { AddPizzaComponent } from './components/admin/add/add-pizza/add-pizza.component';
 import { AddBoissonComponent } from './components/admin/add/add-boisson/add-boisson.component';
 import { AddDessertComponent } from './components/admin/add/add-dessert/add-dessert.component';
+import { UpdateBoissonComponent } from './components/admin/update/update-boisson/update-boisson.component';
+import { UpdateDessertComponent } from './components/admin/update/update-dessert/update-dessert.component';
+import { UpdatePizzaComponent } from './components/admin/update/update-pizza/update-pizza.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { AddDessertComponent } from './components/admin/add/add-dessert/add-dess
     AddPizzaComponent,
     AddBoissonComponent,
     AddDessertComponent,
+    UpdateBoissonComponent,
+    UpdateDessertComponent,
+    UpdatePizzaComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,10 @@ import { AddDessertComponent } from './components/admin/add/add-dessert/add-dess
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      preventDuplicates: true,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
