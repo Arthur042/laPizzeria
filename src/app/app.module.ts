@@ -21,6 +21,9 @@ import { AddDessertComponent } from './components/admin/add/add-dessert/add-dess
 import { UpdateBoissonComponent } from './components/admin/update/update-boisson/update-boisson.component';
 import { UpdateDessertComponent } from './components/admin/update/update-dessert/update-dessert.component';
 import { UpdatePizzaComponent } from './components/admin/update/update-pizza/update-pizza.component';
+import { HomecommandComponent } from './components/command/homecommand/homecommand.component';
+import { CommandPizzaComponent } from './components/command/command-pizza/command-pizza.component';
+import { CardComponent } from './components/command/card/card.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { UpdatePizzaComponent } from './components/admin/update/update-pizza/upd
     UpdateBoissonComponent,
     UpdateDessertComponent,
     UpdatePizzaComponent,
+    HomecommandComponent,
+    CommandPizzaComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

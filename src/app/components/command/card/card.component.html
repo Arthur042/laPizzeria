@@ -1,0 +1,39 @@
+<div *ngIf="!pizza">
+    Chargement en cours !
+</div>
+
+<div *ngIf="pizza" class="card">
+    <img class="card-img-top" src="{{ pizza.image }}" alt="image de la {{ pizza.name }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ pizza.name }}</h5>
+      <p class="card-text">{{ pizza.ingredient }}</p>
+      <h5 *ngIf="pizza.price" class="">petite : {{ pizza.price }}€ / grande : {{ pizza.price + 2 }}€</h5>
+
+      <div *ngIf="!isSelected" id="btn">
+          <a class="btn btn-primary text-light" (click)="addLittle(pizza)">Ajouter petite</a>
+          <a class="btn btn-primary text-light" (click)="addBig(pizza)">Ajouter grande</a>
+      </div>
+
+      <div *ngIf="isSelected && pizza.isNormal" id="btnMore">
+          <fa-icon [icon]="faMinus" class="update py-3 px-0 px-lg-3 rounded text-primary"></fa-icon>
+          <form>
+            <div class="form-group">
+                <label for="quantity"></label>
+                <input required type="number" id="quantity" name="quantity" class="form-control">
+            </div>
+          </form>
+          <fa-icon [icon]="faPlus" class="update py-3 px-0 px-lg-3 rounded text-primary" (click)="addLittlePLus(pizza)"></fa-icon>
+      </div>
+
+      <div *ngIf="isSelected && !pizza.isNormal" id="btnMore">
+        <fa-icon [icon]="faMinus" class="update py-3 px-0 px-lg-3 rounded text-primary"></fa-icon>
+        <form>
+          <div class="form-group">
+              <label for="quantity"></label>
+              <input required type="number" id="quantity" name="quantity" class="form-control">
+          </div>
+        </form>
+        <fa-icon [icon]="faPlus" class="update py-3 px-0 px-lg-3 rounded text-primary" (click)="addBigPlus(pizza)"></fa-icon>
+    </div>
+    </div>
+</div>
