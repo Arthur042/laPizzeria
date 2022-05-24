@@ -21,9 +21,14 @@ import { AddDessertComponent } from './components/admin/add/add-dessert/add-dess
 import { UpdateBoissonComponent } from './components/admin/update/update-boisson/update-boisson.component';
 import { UpdateDessertComponent } from './components/admin/update/update-dessert/update-dessert.component';
 import { UpdatePizzaComponent } from './components/admin/update/update-pizza/update-pizza.component';
-import { HomecommandComponent } from './components/command/homecommand/homecommand.component';
 import { CommandPizzaComponent } from './components/command/command-pizza/command-pizza.component';
 import { CardComponent } from './components/command/card/card.component';
+import { CommandBoissonComponent } from './components/command/command-boisson/command-boisson.component';
+import { CommandDessertComponent } from './components/command/command-dessert/command-dessert.component';
+import { CardBoissonComponent } from './components/command/card-boisson/card-boisson.component';
+import { CardDessertComponent } from './components/command/card-dessert/card-dessert.component';
+import { CommandHommeComponent } from './components/command/command-homme/command-homme.component';
+import { RecapCommandComponent } from './components/command/recap-command/recap-command.component';
 
 @NgModule({
   declarations: [
@@ -40,9 +45,14 @@ import { CardComponent } from './components/command/card/card.component';
     UpdateBoissonComponent,
     UpdateDessertComponent,
     UpdatePizzaComponent,
-    HomecommandComponent,
     CommandPizzaComponent,
     CardComponent,
+    CommandBoissonComponent,
+    CommandDessertComponent,
+    CardBoissonComponent,
+    CardDessertComponent,
+    CommandHommeComponent,
+    RecapCommandComponent,
   ],
   imports: [
     BrowserModule,

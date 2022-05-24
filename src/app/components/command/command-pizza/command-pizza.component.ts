@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Pizza } from 'src/app/models/pizza';
 import { PizzaService } from 'src/app/services/pizza.service';
 
@@ -8,6 +8,7 @@ import { PizzaService } from 'src/app/services/pizza.service';
   styleUrls: ['./command-pizza.component.css']
 })
 export class CommandPizzaComponent implements OnInit {
+  @Output() swapTotal : EventEmitter<boolean> = new EventEmitter;
 
   pizzasList !: Pizza[];
   constructor(private PizzaService: PizzaService) { }
@@ -16,6 +17,10 @@ export class CommandPizzaComponent implements OnInit {
     this.PizzaService.getAllPizza().subscribe(data => {
       this.pizzasList = data;
     })
+  }
+
+  changeTotal(event: boolean) {
+    this.swapTotal.emit(event);
   }
 
 }

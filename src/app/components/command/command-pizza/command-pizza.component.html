@@ -1,7 +1,7 @@
-<section class="container text-center">
-    <h1 class="mb-5">Pizza</h1>
-    
-    <div class="row">
-        <app-card *ngFor="let pizza of pizzasList" [pizza]="pizza" class="col-4 mb-4"></app-card>
-    </div>
+<section id="Pizza" class="container text-center mb-5">
+  <h1 class="mb-5">Pizza</h1>
+
+  <div class="row">
+    <app-card *ngFor="let pizza of pizzasList" [pizza]="pizza" class="col-4 mb-4" (changeTotal)="changeTotal($event)"></app-card>
+  </div>
 </section>

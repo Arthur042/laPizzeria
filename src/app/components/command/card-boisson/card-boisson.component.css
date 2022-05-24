@@ -1,22 +1,21 @@
 img{
-    width: 340px;
-    height: 240px;
-    object-fit: cover;
+    max-height: 250px;
+    object-fit: contain;
 }
 .card {
-    width: 340px;
-    height: 466px;
+    width: 250px;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
+
 }
-#btn{
-    display: flex;
-    justify-content: space-between;
+.btn {
+    margin-bottom: 1rem;
 }
 
 #btnMore{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     position: relative;
 }
@@ -30,7 +29,7 @@ fa-icon{
 }
 
 input{
-    width: 100px;
+    width: 70px;
 }
 .card-body{
     display: flex !important;
@@ -39,6 +38,6 @@ input{
 }
 .form-group{
     position: absolute;
-    left: 105px;
-    bottom: 30px;
+    left: 73px;
+    bottom: 31px;
 }

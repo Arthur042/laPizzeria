@@ -1,0 +1,7 @@
+<app-nav-bar></app-nav-bar>
+<div class="displayWithNav">
+    <app-command-pizza (swapTotal)="swapTotal($event)"></app-command-pizza>
+    <app-command-boisson></app-command-boisson>
+    <app-command-dessert></app-command-dessert>
+    <app-recap-command [pizzaTotalSwap]="pizzaTotalSwap"></app-recap-command>
+</div>

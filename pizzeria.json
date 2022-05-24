@@ -89,24 +89,6 @@
         "basilic",
         "mozzarela"
       ]
-    },
-    {
-      "name": "la trop longue",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDmNZJSzdqEIMq4mFCF6WqqVm3fhvrROHdV2RCPtWVW1y6589u2UdvnlJIxjA29ge8UgA&usqp=CAU",
-      "price": 23,
-      "isNormal": true,
-      "base": "Crème",
-      "ingredient": [
-        "jambon",
-        "mozzarela",
-        "Poulet",
-        "chorizo",
-        "basilic",
-        "poivron",
-        "Curry",
-        "parmesan"
-      ],
-      "id": 7
     }
   ],
   "boisson": [

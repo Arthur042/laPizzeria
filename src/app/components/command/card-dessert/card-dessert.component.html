@@ -1,0 +1,27 @@
+<div *ngIf="!dessert">
+  Chargement en cours !
+</div>
+
+<div *ngIf="dessert" class="card">
+  <img class="card-img-top" src="{{ dessert.image }}" alt="image de la {{ dessert.name }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ dessert.name }} : {{ dessert.price }}€</h5>
+    <p class="card-text">{{ dessert.ingredient }}</p>
+    <div *ngIf="quantity == 0" id="btn">
+      <a class="btn btn-primary text-light" (click)="add(dessert)">Ajouter</a>
+    </div>
+
+    <div *ngIf="quantity != 0" id="btnMore">
+      <fa-icon [icon]="faMinus" class="update py-3 px-0 px-lg-3 rounded text-primary" (click)="removePLus(dessert)">
+      </fa-icon>
+      <form>
+        <div class="form-group">
+          <label for="quantity"></label>
+          <input type="number" id="quantity" name="quantity" class="form-control" [(ngModel)]="quantity">
+        </div>
+      </form>
+      <fa-icon [icon]="faPlus" class="update py-3 px-0 px-lg-3 rounded text-primary" (click)="addPLus(dessert)">
+      </fa-icon>
+    </div>
+  </div>
+</div>

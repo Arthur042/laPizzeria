@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Commande } from '../models/commande';
 import { Pizza } from '../models/pizza';
 
@@ -7,41 +8,52 @@ import { Pizza } from '../models/pizza';
 })
 export class CommandeService {
 
-  commande : Commande[] = [] 
+  apiUrl = environment.apiUrl + '/Commande'
+
+  commandes : Commande[] = [] 
   commandeTemp : Commande = new Commande()
+
   constructor() { }
 
   addPizza(pizza : Pizza, quantity: number) {
+
     this.commandeTemp.product = pizza.name;
     this.commandeTemp.quantity = quantity;
 
-    if (pizza.isNormal == true && pizza.price) {
+    if ((pizza.isNormal == true && pizza.price) || (pizza.isNormal == undefined && pizza.price)) {
       this.commandeTemp.price = pizza.price
     } else if(pizza.isNormal == false && pizza.price) {
       this.commandeTemp.price = pizza.price + 2;
     }
 
-    console.log(this.commande);
+    let cloneCommandeTemp = JSON.parse(JSON.stringify(this.commandeTemp));
     
-    if (this.commande.length > 0) {
-      this.commande.forEach(element => {
-        
-        if (element.product === this.commandeTemp.product && element.quantity && element.price && this.commandeTemp.price){
-          console.log('tableau sup 0 article identique');
-          element.quantity = quantity;
-          element.price = this.commandeTemp.price * quantity
-        } else if (element.product !== this.commandeTemp.product && element.quantity && element.price && this.commandeTemp.price){
-          console.log('tableau sup 0mais article diff');
-          
-          this.commande.push(this.commandeTemp);
-        }
-      }) 
+    if (this.commandes.length > 0) {
+
+      if (this.commandes.some(commande => commande.product === this.commandeTemp.product)) {
+        for (let i = 0; i < this.commandes.length; i++) {
+          if (this.commandes[i].product === this.commandeTemp.product && this.commandeTemp.price){
+            this.commandes[i].quantity = quantity;
+            this.commandes[i].price = this.commandeTemp.price * quantity
+          } 
+        } 
+      } else {
+        this.commandes.push(cloneCommandeTemp);
+      }
     } else{
-      console.log('tableau inf 0');
-      this.commande.push(this.commandeTemp);
+      this.commandes.push(cloneCommandeTemp);
     }
-    console.log(this.commande);
-    
-    
+    console.log(this.commandes); 
+  }
+  
+  totalPrice() :number {
+    let totalPrice : number = 0;
+    this.commandes.forEach(element => {
+      if (element.price){
+        totalPrice += element.price
+      }
+    })
+
+    return totalPrice;
   }
 }

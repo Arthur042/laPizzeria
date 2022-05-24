@@ -10,12 +10,12 @@ import { LoginPageComponent } from './components/admin/login-page/login-page.com
 import { UpdateBoissonComponent } from './components/admin/update/update-boisson/update-boisson.component';
 import { UpdateDessertComponent } from './components/admin/update/update-dessert/update-dessert.component';
 import { UpdatePizzaComponent } from './components/admin/update/update-pizza/update-pizza.component';
-import { HomecommandComponent } from './components/command/homecommand/homecommand.component';
+import { CommandHommeComponent } from './components/command/command-homme/command-homme.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 
 const routes: Routes = [
   {path: '', component: HomepageComponent},
-  {path: 'commande', component: HomecommandComponent},
+  {path: 'commande', component: CommandHommeComponent},
   {path: 'login', component: LoginPageComponent},
   {path: 'admin/Pizza', component: AdminHomeComponent},
   {path: 'admin/Boisson', component: AdminBoissonComponent},
